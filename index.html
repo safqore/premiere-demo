@@ -45,19 +45,14 @@
             z-index: -1;
           }
 
-          /* Optional: if you want the chat toggle inset relative to image edge */
+          /* Hide the floating chat toggle button */
           .n8n-chat-toggle-button {
-            bottom: 24px;
-            right: calc(
-              max(24px, (100vw - min(var(--site-max), 100vw)) / 2 + 24px)
-            );
+            display: none !important;
           }
 
-          @media (max-width: 600px) {
-            .n8n-chat-toggle-button {
-              right: 16px;
-              bottom: 16px;
-            }
+          /* Hide any floating chat elements */
+          .n8n-chat-widget {
+            display: none !important;
           }
 
           :root {
@@ -234,7 +229,7 @@
               headers: {},
             },
             target: "#n8n-chat",
-            mode: "window",
+            mode: "inline",
             chatInputKey: "chatInput",
             chatSessionKey: "sessionId",
             loadPreviousSession: true,
